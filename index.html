@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Vraagbaak Informatica</title>
+    </head>
+    <body>
+        <header>
+            <h1>Vraagbaak informatica</h1>
+            <p>Bekijk hier veelgestelde vragen en antwoorden</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Algemeen</a></li>
+                <li><a href="#Grondslagen">Grondslagen</a></li>
+                <li><a href="#Web Design">Web Design</a></li>
+                <li><a href="#Python">Python</a></li>
+                <li><a href="#Databases">Databases</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <button class="collapsible-Q">Dit is je vraag</button>
+            <div class="collapsible-A">
+                <p>Hier is je antwoord</p>
+            </div>
+        </div>
+        <div class="content">
+            <button class="collapsible-Q">Dit is je vraag</button>
+            <div class="collapsible-A">
+                <p>Hier is je antwoord</p>
+            </div>
+        </div>
+
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible-Q");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active-C");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+        </script>
+
+    </body>
+</html>
